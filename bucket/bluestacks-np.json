@@ -20,18 +20,23 @@
         "script": [
             "if (!(is_admin)) { \"$app requires admin rights to $cmd\"; break }",
             "Start-Process -Wait \"$dir\\setup.exe\" \"-s\" -Verb RunAs",
-            "Remove-Item \"$Env:Public\\Desktop\\BlueStacks 5*.lnk\""
+            "Remove-Item \"$Env:Public\\Desktop\\BlueStacks 5*.lnk\"",
+            "Remove-Item \"$dir\\setup.exe\""
         ]
     },
     "uninstaller": {
         "script": [
-            "if (!(is_admin)) { \"$app requires admin rights to $cmd\"; break }",
+            "if ($cmd -ceq 'uninstall') {",
+            "if (!(is_admin)) { \"$app requires admin rights to $cmd\"; return }",
             "$uninstaller = (Get-ItemProperty -ErrorAction Ignore \"HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\BlueStacks_nxt\" -Name UninstallString).UninstallString",
             "if (!$uninstaller) { $uninstaller = (Get-ItemProperty -ErrorAction Ignore \"HKLM:\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\BlueStacks_nxt\" -Name UninstallString).UninstallString }",
-            "if (!$uninstaller) { warn 'Could not find app info in registry' }",
+            "if (!$uninstaller) { warn 'Could not find app info in registry'; return }",
             "# Remove -tmp at the end",
             "$uninstaller = $uninstaller.Substring(0, $uninstaller.Length - 5)",
-            "Start-Process -Wait \"$uninstaller\" \"-s\" -Verb RunAs"
+            "Start-Process -Wait \"$uninstaller\" \"-s\" -Verb RunAs",
+            "}",
+            "elseif ($cmd -ceq 'update') {}",
+            "else { Write-Host -f darkred \"handling of '$cmd' is not defined yet.\" }"
         ]
     },
     "checkver": {
