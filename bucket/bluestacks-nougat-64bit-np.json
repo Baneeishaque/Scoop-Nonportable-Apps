@@ -1,5 +1,5 @@
 {
-    "version": "5.13.200.1026",
+    "version": "5.20.0.1037",
     "description": "Android emulator",
     "homepage": "https://www.bluestacks.com/",
     "license": {
@@ -8,26 +8,31 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://cdn3.bluestacks.com/downloads/windows/nxt/5.13.200.1026/da48399b2d54784bf86f15276aac6b95/FullInstaller/x64/BlueStacksFullInstaller_5.13.200.1026_amd64_native.exe#/setup.exe",
-            "hash": "1140759ffe738a62a354d8387aa125fb462a87d085fbc073e91d9d345f96a12e"
+            "url": "https://cdn3.bluestacks.com/downloads/windows/nxt/5.20.0.1037/9f60d7a73e01319f46d6a579314d41cb/FullInstaller/x64/BlueStacksFullInstaller_5.20.0.1037_amd64_native.exe#/setup.exe",
+            "hash": "31abb1e537076daacf378a31616bbf02d429ac7d43493b9bf27245a259c5a3f7"
         }
     },
     "installer": {
         "script": [
             "if (!(is_admin)) { \"$app requires admin rights to $cmd\"; break }",
-            "Start-Process -Wait \"$dir\\setup.exe\" \"--defaultImageName Nougat64 --imageToLaunch Nougat64 -s\" -Verb RunAs" ,
-            "Remove-Item \"$Env:Public\\Desktop\\BlueStacks 5*.lnk\""
+            "Start-Process -Wait \"$dir\\setup.exe\" \"--defaultImageName Nougat64 --imageToLaunch Nougat64 -s\" -Verb RunAs",
+            "Remove-Item \"$Env:Public\\Desktop\\BlueStacks 5*.lnk\"",
+            "Remove-Item \"$dir\\setup.exe\""
         ]
     },
     "uninstaller": {
         "script": [
-            "if (!(is_admin)) { \"$app requires admin rights to $cmd\"; break }",
+            "if ($cmd -ceq 'uninstall') {",
+            "if (!(is_admin)) { \"$app requires admin rights to $cmd\"; return }",
             "$uninstaller = (Get-ItemProperty -ErrorAction Ignore \"HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\BlueStacks_nxt\" -Name UninstallString).UninstallString",
             "if (!$uninstaller) { $uninstaller = (Get-ItemProperty -ErrorAction Ignore \"HKLM:\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\BlueStacks_nxt\" -Name UninstallString).UninstallString }",
-            "if (!$uninstaller) { warn 'Could not find app info in registry' }",
+            "if (!$uninstaller) { warn 'Could not find app info in registry'; return }",
             "# Remove -tmp at the end",
             "$uninstaller = $uninstaller.Substring(0, $uninstaller.Length - 5)",
-            "Start-Process -Wait \"$uninstaller\" \"-s\" -Verb RunAs"
+            "Start-Process -Wait \"$uninstaller\" \"-s\" -Verb RunAs",
+            "}",
+            "elseif ($cmd -ceq 'update') {}",
+            "else { Write-Host -f darkred \"handling of '$cmd' is not defined yet.\" }"
         ]
     },
     "checkver": {
