@@ -1,0 +1,33 @@
+{
+    "version": "48254",
+    "homepage": "http://jdownloader.org/",
+    "description": "JDownloader 2 is an open-source download manager.",
+    "license": "GPL-3.0-only",
+    "depends": "main/megacmd",
+    "architecture": {
+        "64bit": {
+            "url": "https://dummy-site.com",
+            "installer": {
+                "script": [
+                    "$url = 'https://jdownloader.org/jdownloader2'",
+                    "$pageContent = Invoke-WebRequest -Uri $url",
+                    "$pattern = 'title=\"(.+)\" >Download Installer \\(x64'",
+                    "$matchResult = $pageContent | Select-String -Pattern $pattern",
+                    "$megaLink = if($matchResult.Matches) { $matchResult.Matches.Groups[1].Value }",
+                    "$setupFilePath = Join-Path -Path $dir -ChildPath \"setup.exe\"",
+                    "mega-get $megaLink $setupFilePath",
+                    "Start-Process -FilePath $setupFilePath -ArgumentList \"-q\" -Wait",
+                    "Remove-Item \"$dir\\setup.exe\""
+                ]
+            },
+            "uninstaller": {
+                "script": "Start-Process -FilePath \"${Env:ProgramFiles}\\JDownloader\\Uninstall JDownloader.exe\" -Wait"
+            }
+        }
+    },
+    "checkver": {
+        "url": "https://svn.jdownloader.org/build.php",
+        "regex": "Latest Revision:</b></td><td >(\\d+)</td>"
+    },
+    "autoupdate": {}
+}
