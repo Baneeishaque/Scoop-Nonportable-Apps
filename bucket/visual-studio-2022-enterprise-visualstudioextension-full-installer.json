@@ -1,10 +1,10 @@
 {
-    "version": "17.9.3",
+    "version": "17.9.4",
     "description": "Visual Studio Enterprise is a powerful, comprehensive IDE for developers designing, building, testing, and deploying complex applications for any platform—including the Microsoft stack. Workload Formal Name : visual studio extension development, Workload Description : create add-ons and extensions for visual studio, including new commands, code analyzers and tool windows.",
     "homepage": "https://visualstudio.microsoft.com/vs/",
     "license": "Freemium",
     "url": "https://aka.ms/vs/17/release/vs_enterprise.exe",
-    "hash": "6f998d9d0f2538946b6d50f47acabd6a62b83a3f4d65cdae70900ebc4106149e",
+    "hash": "439679bf3a672c577450a39ebc671f4ee64a325a39e9044c7a584ab4b5ea379d",
     "installer": {
         "args": [
             "--add=Microsoft.VisualStudio.Workload.visualstudioextension;includeRecommended;includeOptional",
