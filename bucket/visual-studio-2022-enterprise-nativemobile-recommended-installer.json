@@ -1,10 +1,10 @@
 {
-    "version": "17.9.4",
+    "version": "17.9.5",
     "description": "Visual Studio Enterprise is a powerful, comprehensive IDE for developers designing, building, testing, and deploying complex applications for any platform—including the Microsoft stack. Workload Formal Name : mobile development with c++, Workload Description : build cross-platform applications for ios, android or windows using c++.",
     "homepage": "https://visualstudio.microsoft.com/vs/",
     "license": "Freemium",
     "url": "https://aka.ms/vs/17/release/vs_enterprise.exe",
-    "hash": "439679bf3a672c577450a39ebc671f4ee64a325a39e9044c7a584ab4b5ea379d",
+    "hash": "dcbc80c840ee3b6219b8806d13cd9bc35c5f84c019ea9a572bb7607317e3aaa2",
     "installer": {
         "args": [
             "--add=Microsoft.VisualStudio.Workload.nativemobile;includeRecommended",
