@@ -1,10 +1,10 @@
 {
-    "version": "17.9.6",
+    "version": "17.9.7",
     "description": "Visual Studio Enterprise is a powerful, comprehensive IDE for developers designing, building, testing, and deploying complex applications for any platform—including the Microsoft stack. Workload Formal Name : linux and embedded development with c++, Workload Description : create and debug applications running in a linux environment or on an embedded device.",
     "homepage": "https://visualstudio.microsoft.com/vs/",
     "license": "Freemium",
     "url": "https://aka.ms/vs/17/release/vs_enterprise.exe",
-    "hash": "b4ccc299f93c20a4d52e07b4de70094921f961600d639d0fede6ab47ed7005ca",
+    "hash": "72af20056e3b0f7a8e129a1a9e2a121059beba9c8a520bc8f20d90117fc9f186",
     "installer": {
         "args": [
             "--add=Microsoft.VisualStudio.Workload.nativecrossplat;includeRecommended;includeOptional",
