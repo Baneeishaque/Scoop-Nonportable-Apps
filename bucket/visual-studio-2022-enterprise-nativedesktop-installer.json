@@ -1,10 +1,10 @@
 {
-    "version": "17.9.7",
+    "version": "17.10.0",
     "description": "Visual Studio Enterprise is a powerful, comprehensive IDE for developers designing, building, testing, and deploying complex applications for any platform—including the Microsoft stack. Workload Formal Name : desktop development with c++, Workload Description : build modern c++ apps for windows using tools of your choice, including msvc, clang, cmake, or msbuild.",
     "homepage": "https://visualstudio.microsoft.com/vs/",
     "license": "Freemium",
     "url": "https://aka.ms/vs/17/release/vs_enterprise.exe",
-    "hash": "72af20056e3b0f7a8e129a1a9e2a121059beba9c8a520bc8f20d90117fc9f186",
+    "hash": "d9d4ca4a89fc684082fe08fb32899658d9d8b706e7660fa3996cb68b99a99210",
     "installer": {
         "args": [
             "--add=Microsoft.VisualStudio.Workload.nativedesktop",
