@@ -1,5 +1,5 @@
 {
-    "version": "5.21.205.1001",
+    "version": "5.21.206.1006",
     "description": "Android emulator",
     "homepage": "https://www.bluestacks.com/",
     "license": {
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://cdn3.bluestacks.com/downloads/windows/nxt/5.21.205.1001/10d8bf41715123286e8fc772fc1e32bc/FullInstaller/x64/BlueStacksFullInstaller_5.21.205.1001_amd64_native.exe#/setup.exe",
-            "hash": "6a8989c284025c846dbcd19bafb8a11c23db8d71e43e5582c6e006e6d115439a"
+            "url": "https://cdn3.bluestacks.com/downloads/windows/nxt/5.21.206.1006/fd635697cba53775f487aac3f41c0184/FullInstaller/x64/BlueStacksFullInstaller_5.21.206.1006_amd64_native.exe#/setup.exe",
+            "hash": "f3db043f93a6082d2000612aa9e2ac06180ad18f17b4ba60157c73532f026bf2"
         }
     },
     "installer": {
