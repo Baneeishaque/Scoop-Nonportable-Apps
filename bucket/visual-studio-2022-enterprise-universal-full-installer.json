@@ -1,6 +1,6 @@
 {
     "version": "17.10.1",
-    "description": "Visual Studio Enterprise is a powerful, comprehensive IDE for developers designing, building, testing, and deploying complex applications for any platform—including the Microsoft stack. Workload Formal Name : universal windows platform development, Workload Description : create applications for the universal windows platform with c#, vb, or optionally c﻿+﻿+.",
+    "description": "Visual Studio Enterprise is a powerful, comprehensive IDE for developers designing, building, testing, and deploying complex applications for any platform—including the Microsoft stack. Workload Formal Name : windows application development, Workload Description : build applications for the windows platform using winui with c# or optionally c﻿+﻿+.",
     "homepage": "https://visualstudio.microsoft.com/vs/",
     "license": "Freemium",
     "url": "https://aka.ms/vs/17/release/vs_enterprise.exe",
@@ -19,8 +19,11 @@
         "script": [
             "function Clear-VisualStudio {",
             "Start-Process -FilePath \"$dir\\vs_enterprise.exe\" -ArgumentList \"uninstall\", \"--channelId=VisualStudio.17\", \"--productId=Microsoft.VisualStudio.Product.Enterprise\", \"--passive\", \"--norestart\", \"--wait\" -Wait",
+            "$installedVisualStudioPreviewWorkloads = & \"$(scoop prefix scoop)\\bin\\scoop.ps1\" list | Select-String -Pattern '(?<visualStudioWorkloadApp>visual-studio-2022-preview-enterprise-(?<visualStudioWorkloadInternalName>[a-z]+)(?<vSWorkloadAppRecommendedVariant>-recommended)?(?<vSWorkloadAppFullVariant>-full)?-installer)' | ForEach-Object -Process { $_.Matches }",
+            "if ($installedVisualStudioPreviewWorkloads.Count -eq 0){",
             "Start-Process -FilePath \"${Env:ProgramFiles(x86)}\\Microsoft Visual Studio\\Installer\\vs_installer.exe\" -ArgumentList \"/uninstall\" -Wait",
             "Remove-Item \"$([System.Environment]::GetFolderPath('commonstartmenu'))\\Programs\\Visual Studio Installer.lnk\"",
+            "}",
             "}",
             "$matchResult = Select-String -InputObject $app -Pattern '(?<visualStudioWorkloadApp>visual-studio-2022-enterprise-(?<visualStudioWorkloadInternalName>[a-z]+)(?<vSWorkloadAppRecommendedVariant>-recommended)?(?<vSWorkloadAppFullVariant>-full)?-installer)' | ForEach-Object -Process { $_.Matches }",
             "$workloadInternalName = $matchResult.Groups[2].Value",
