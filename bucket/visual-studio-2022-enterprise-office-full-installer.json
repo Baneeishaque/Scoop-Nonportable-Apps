@@ -1,10 +1,10 @@
 {
-    "version": "17.10.2",
+    "version": "17.10.3",
     "description": "Visual Studio Enterprise is a powerful, comprehensive IDE for developers designing, building, testing, and deploying complex applications for any platform—including the Microsoft stack. Workload Formal Name : office/sharepoint development, Workload Description : create office and sharepoint add-ins, sharepoint solutions, and vsto add-ins using c#, vb, and javascript.",
     "homepage": "https://visualstudio.microsoft.com/vs/",
     "license": "Freemium",
     "url": "https://aka.ms/vs/17/release/vs_enterprise.exe",
-    "hash": "c9313491bcf7262188a9fadde06addb46d70c28003399cab5878ca8d22dcfbe6",
+    "hash": "0260a161cd288ef7bf7a09007957eaf355e56ef3f53c236c493f857c7e8a65f6",
     "installer": {
         "args": [
             "--add=Microsoft.VisualStudio.Workload.office;includeRecommended;includeOptional",
