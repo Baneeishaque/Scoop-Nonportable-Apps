@@ -1,10 +1,10 @@
 {
-    "version": "17.10.2",
+    "version": "17.10.3",
     "description": "Visual Studio Enterprise is a powerful, comprehensive IDE for developers designing, building, testing, and deploying complex applications for any platform—including the Microsoft stack. Workload Formal Name : game development with unity, Workload Description : create 2d and 3d games with unity, a powerful cross-platform development environment.",
     "homepage": "https://visualstudio.microsoft.com/vs/",
     "license": "Freemium",
     "url": "https://aka.ms/vs/17/release/vs_enterprise.exe",
-    "hash": "c9313491bcf7262188a9fadde06addb46d70c28003399cab5878ca8d22dcfbe6",
+    "hash": "0260a161cd288ef7bf7a09007957eaf355e56ef3f53c236c493f857c7e8a65f6",
     "installer": {
         "args": [
             "--add=Microsoft.VisualStudio.Workload.managedgame",
