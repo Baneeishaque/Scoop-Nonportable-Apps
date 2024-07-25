@@ -1,10 +1,10 @@
 {
-    "version": "17.10.4",
+    "version": "17.10.5",
     "description": "Visual Studio Enterprise is a powerful, comprehensive IDE for developers designing, building, testing, and deploying complex applications for any platform—including the Microsoft stack. Workload Formal Name : visual studio core editor (included with visual studio enterprise 2022), Workload Description : the visual studio core shell experience, including syntax-aware code editing, source code control and work item management.",
     "homepage": "https://visualstudio.microsoft.com/vs/",
     "license": "Freemium",
     "url": "https://aka.ms/vs/17/release/vs_enterprise.exe",
-    "hash": "c2ce3760f11eb4ce723831409ce88476ab7a7c68d02ec0d3419bb9c028e2d878",
+    "hash": "54117e5bbf8457c4153c24c497de556e0c6be6e0dab01a0e8017f3caa9c9e950",
     "installer": {
         "args": [
             "--add=Microsoft.VisualStudio.Workload.coreeditor;includeRecommended",
