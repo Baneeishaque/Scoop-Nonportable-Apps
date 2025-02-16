@@ -1,5 +1,5 @@
 {
-    "version": "48254",
+    "version": "50639",
     "homepage": "http://jdownloader.org/",
     "description": "JDownloader 2 is an open-source download manager.",
     "license": "GPL-3.0-only",
@@ -28,5 +28,7 @@
         "url": "https://svn.jdownloader.org/build.php",
         "regex": "Latest Revision:</b></td><td >(\\d+)</td>"
     },
-    "autoupdate": {}
+    "autoupdate": {
+        
+    }
 }
